@@ -1,0 +1,47 @@
+<script>
+	var seed = Math.floor(Date.now() / 86400000); // 1 per day
+	
+	// http://stackoverflow.com/a/19303725
+	function seededRandom() {
+	    var x = Math.sin(seed++) * 10000;
+	    return x - Math.floor(x);
+	}
+	
+	function randomMVC(seeded) {		
+		function rnd(arr) {
+			return arr[Math.floor(((seeded ? seededRandom() : Math.random())*arr.length))]
+		}
+		
+		var d = ["Dabbler", "Dad", "Daddy", "Daggerman", "Dairy", "Dam", "Damage", "Dame", "Damn", "Da`mnation", "Damsel", "Dance", "Dancer", "Dancing", "Dandelion", "Danger", "Danseur", "Darbuka", "Daring", "Dark", "Darling", "Darn", "Dash", "Dashboard", "Data", "Date", "Datum", "Daughter", "Dauphin", "Davenport", "Dawn", "Day", "Daybed", "Daybreak", "Daydreaming", "Daylight", "Daytime", "Dazzler", "Deacon", "Deactivation", "Dead", "Deadline", "Deadlock", "Deadweight", "Deae", "Deal", "Dealer", "Dean", "Dear", "Dearth", "Death", "Deathbed", "Debacle", "Debate", "Debating", "Debauchery", "Debility", "Debt", "Debunking", "Debut", "Debutante", "Decade", "Decadence", "Decay", "Deceased", "Decedent", "Deceit", "Deceleration", "Decency", "Decentralization", "Deception", "Decimal", "Decision", "Deck", "Decking", "Declaration", "Declarative", "Decline", "Declivity", "Decolletage", "Decomposition", "Decompression", "Decor", "Decoration", "Decorator", "Decorum", "Decrease", "Decree", "Decrement", "Dedication", "Deductibility", "Deduction", "Deed", "Deepening", "Deer", "Defacing", "Default", "Defeat", "Defeatism", "Defect", "Defection", "Defence", "Defendant", "Defender", "Defense", "Deference", "Deferent", "Deferment", "Defiance", "Deficiency", "Deficit", "Definition", "Deformation", "Deformity", "Degeneration", "Degradation", "Degree", "Dehydration", "Deification", "Deity", "Dejection", "Delay", "Delectation", "Delegate", "Delegation", "Deliberation", "Delicacy", "Delight", "Delineation", "Delinquency", "Delinquent", "Delirium", "Deliverance", "Delivery", "Dell", "Deltoid", "Deluge", "Delusion", "Deluxer", "Demage", "Demagnification", "Demand", "Demander", "Demanding", "Demarcation", "Demeanor", "Demineralization", "Demise", "Democracy", "Democratization", "Demography", "Demolition", "Demon", "Demonstration", "Demoralization", "Demurrer", "Demythologization", "Den", "Denial", "Denomination", "Denouement", "Densitometry", "Density", "Dent", "Dentist", "Dentistry", "Denunciation", "Denying", "Department", "Departure", "Dependence", "Dependency", "Dependent", "Depersonalization", "Depiction", "Depletion", "Deployment", "Deposit", "Deposition", "Depot", "Depravity", "Depreciation", "Depression", "Deprivation", "Depth", "Deputy", "Derangement", "Derby", "Derelict", "Dereliction", "Derision", "Derivation", "Derivative", "Derrick", "Derriere", "Descendant", "Descent", "Description", "Desecration", "Desegregation", "Desert", "Desertion", "Design", "Designate", "Designation", "Designer", "Designing", "Desirability", "Desire", "Desk", "Desolation", "Despair", "Despairing", "Desperation", "Despondency", "Despot", "Despotism", "Dessert", "Destination", "Destiny", "Destroyer", "Destruction", "Desuetude", "Detachment", "Detail", "Detection", "Detective", "Detector", "Detente", "Detention", "Detergency", "Detergent", "Deterioration", "Determinability", "Determinant", "Determination", "Determinism", "Deterrence", "Deterrent", "Detestation", "Detonation", "Detractor", "Detriment", "Devastation", "Developer", "Development", "Deviance", "Deviation", "Device", "Devil", "Devisee", "Devotion", "Dew", "Dexamethasone", "Dexterity", "Diagnometer", "Diagnosing", "Diagnostic", "Diagram", "Dial", "Dialect", "Dialectic", "Dialogue", "Diam", "Diameter", "Diamond", "Diaphragm", "Diarrhea", "Diarrhoea", "Diary", "Diathermy", "Dice", "Dichondra", "Dichotomy", "Dictator", "Dictatorship", "Diction", "Dictionary", "Dictum", "Die", "Diem", "Diesel", "Diet", "Diethylaminoethyl", "Diethylstilbestrol", "Diety", "Difference", "Differentiability", "Differential", "Differentiation", "Difficulty", "Diffidence", "Diffraction", "Diffrunce", "Diffusion", "Dig", "Digest", "Digit", "Digitalization", "Dignity", "Diisocyanate", "Dilatation", "Dilation", "Dilemma", "Dilettante", "Diligence", "Dill", "Dilution", "Dime", "Dimension", "Dimensioning", "Dimethylglyoxime", "Diminution", "Din", "Dinghy", "Dingo", "Dining", "Dinner", "Dinnertime", "Dinnerware", "Dinosaur", "Diocese", "Diorah", "Dioxalate", "Dioxide", "Dip", "Diphosphopyridine", "Diplomacy", "Diplomat", "Dipper", "Direction", "Directionality", "Directive", "Directivity", "Director", "Directorate", "Directorship", "Directory", "Dirge", "Dirt", "Disability", "Disadvantage", "Disaffection", "Disagreement", "Disappearance", "Disappointment", "Disapprobation", "Disapproval", "Disarmament", "Disarray", "Disassembly", "Disaster", "Disbelief", "Disbursement", "Disc", "Discernment", "Discharge", "Disciple", "Discipleship", "Discipline", "Disclaimer", "Disclosure", "Discomfort", "Discontent", "Discontinuance", "Discontinuity", "Discord", "Discount", "Discouragement", "Discourse", "Discoverer", "Discovery", "Discredit", "Discrepancy", "Discretion", "Discrimination", "Discussant", "Discussion", "Disdain", "Disease", "Disenfranchisement", "Disengagement", "Disfavor", "Disgrace", "Disguise", "Disgust", "Dish", "Disharmony", "Dishonesty", "Dishonor", "Dishwater", "Disillusionment", "Disinclination", "Disintegration", "Disinterest", "Disk", "Dislike", "Dislocation", "Disloyalty", "Dismay", "Dismemberment", "Dismissal", "Disobedience", "Disorder", "Disorganization", "Disparagement", "Disparity", "Dispatch", "Dispensary", "Dispensation", "Dispenser", "Dispersal", "Dispersement", "Dispersion", "Displacement", "Display", "Displeasure", "Disposal", "Disposition", "Dispossession", "Dispute", "Disquiet", "Disquietude", "Disregard", "Disrepair", "Disrepute", "Disrespect", "Disruption", "Dissatisfaction", "Dissection", "Dissemination", "Dissension", "Dissent", "Dissenter", "Disservice", "Dissimulation", "Dissociation", "Dissolution", "Dissolve", "Distance", "Distaste", "Distension", "Distillation", "Distiller", "Distinction", "Distortion", "Distraction", "Distribution", "Distributor", "Distributorship", "District", "Distrust", "Disturbance", "Disturber", "Disunion", "Disunity", "Ditch", "Ditcher", "Ditty", "Diva", "Divan", "Dive", "Diver", "Divergence", "Diversification", "Diversion", "Diversity", "Divertimento", "Divestiture", "Dividend", "Divider", "Divination", "Divine", "Diving", "Divinity", "Division", "Divorce", "Divorcee", "Dock", "Dockside", "Doctor", "Doctorate", "Doctrinaire", "Doctrine", "Document", "Documentary", "Documentation", "Dodge", "Dog", "Doghouse", "Dogleg", "Dogma", "Dogmatism", "Dogtrot", "Dogwood", "Doing", "Doll", "Dollar", "Dollarette", "Dolphin", "Domain", "Dome", "Domestic", "Domesticity", "Domicile", "Dominance", "Domination", "Dominion", "Don", "Donation", "Donkey", "Donor", "Doom", "Doomsday", "Door", "Doorbell", "Doorkeeper", "Doorknob", "Doorman", "Doormen", "Doorstep", "Doorway", "Dope", "Dormitory", "Dosage", "Dose", "Dot", "Dotting", "Double", "Doubleheader", "Doubloon", "Doubt", "Doubte", "Dough", "Dove", "Dowel", "Dower", "Down", "Downfall", "Downpayment", "Downpour", "Downtrend", "Downturn", "Dowry", "Dozen", "Draft", "Draftee", "Drafting", "Drag", "Dragger", "Dragnet", "Dragon", "Drain", "Drainage", "Draining", "Dram", "Drama", "Dramatist", "Dramatization", "Draper", "Drapery", "Draught", "Draw", "Drawback", "Drawbridge", "Drawer", "Drawing", "Drawl", "Dread", "Dream", "Dreamer", "Dresser", "Dressing", "Drier", "Drift", "Drill", "Drilling", "Drink", "Drinker", "Drinking", "Drip", "Drive", "Driver", "Driveway", "Driving", "Drizzle", "Dromozoa", "Drone", "Drop", "Drought", "Drouth", "Drove", "Drudgery", "Drug", "Drugstore", "Drum", "Drumlin", "Drummer", "Drunk", "Drunkard", "Dryer", "Drying", "Drywall", "Dualism", "Duck", "Duct", "Ductwork", "Dud", "Due", "Duel", "Duet", "Duf", "Duffel", "Duffer", "Dugout", "Duke", "Dumbbell", "Dump", "Dumping", "Dun", "Dune", "Dung", "Dungeon", "Duplicate", "Duplication", "Durability", "Duration", "Dusk", "Dust", "Dustbin", "Dusting", "Duty", "Dwarf", "Dweller", "Dwelling", "Dyerear", "Dying", "Dynamic", "Dynamite", "Dynamo", "Dynasty", "Dysentery", "Dysplasia", "Dystopia", "Dystrophy"];
+		return [rnd(d), rnd(d)].join(" and ");
+	};
+	
+	function populateContent (seeded) {
+		document.getElementById("Content").innerHTML = randomMVC(seeded);
+	}
+	
+	window.onload = function() { populateContent(true); };
+</script>
+
+<style>
+	button {
+		border: none;
+		background: none;
+	}
+	
+	button:focus {
+		outline:0;
+	}
+
+	#content {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif; 
+		font-size: 3em;
+	}
+</style>
+
+<body>
+	<button onclick="populateContent(false)" id="Content">generate new</button>
+</body>
