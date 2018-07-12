@@ -17,7 +17,8 @@
 	};
 	
 	function populateContent (seeded) {
-		document.getElementById("Content").innerHTML = randomMVC(seeded);
+		const result = seeded ? "Today D&D is: " : "";
+		document.getElementById("Content").innerHTML = result + randomMVC(seeded);
 	}
 	
 	window.onload = function() { populateContent(true); };
